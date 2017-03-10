@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "cyclejs-auth0": "^2.0.0",
+    "events": "^1.1.1",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "supervisor": "^0.12.0",
+    "wright": "porsager/wright"
+  },
+  "scripts": {
+    "dev": "run-p -l dev:*",
+    "dev:js:once": "rollup -c rollup.config.js --environment target:build",
+    "dev:js": "supervisor --ignore build/ --no-restart-on exit --exec yarn -- run dev:js:once",
+    "dev:serve": "wright index.html"
+  }
+}
+
